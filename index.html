@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2 id="txt"></h2>
+    <Script>
+function celsiusToFahrenheit(celsius) {
+    return (celsius * 9/5) + 32;
+}
+
+function fahrenheitToCelsius(fahrenheit) {
+    return (fahrenheit - 32) * 5/9;
+}
+
+function handleConversion() {
+    var temperature = prompt("Enter the temperature value:");
+    var unit = prompt("Enter the unit of the temperature (C for Celsius, F for Fahrenheit):").toUpperCase();
+
+    var convertedTemperature;
+    if (unit === "C") {
+        convertedTemperature = celsiusToFahrenheit(temperature);
+        {
+            var fromUnit = "Celsius";
+            var toUnit = "Fahrenheit";
+            document.getElementById('txt').innerHTML=`Converting ${temperature} ${fromUnit} to ${toUnit}: ${convertedTemperature} ${toUnit}`;
+        }
+    } else if (unit === "F") {
+        convertedTemperature = fahrenheitToCelsius(temperature);
+        {
+            var fromUnit = "Fahrenheit";
+            var toUnit = "Celsius";
+            document.getElementById('txt').innerHTML=`Converting ${temperature} ${fromUnit} to ${toUnit}: ${convertedTemperature} ${toUnit}`;
+        }
+    } else {
+        document.getElementById('txt').innerHTML="Invalid unit entered. Please enter C or F.";
+        return;
+    }
+}
+
+handleConversion();
+
+    </Script>
+</body>
+</html>
